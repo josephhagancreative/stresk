@@ -1,19 +1,20 @@
 import type { GetStaticProps, NextPage } from "next"
 import Head from "next/head"
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client"
-import Card from "../components/Card"
+import Card from "../components/Reusables/Card"
 import {
   Exercise,
   ExercisesProps,
 } from "../interfaces/exercises/exercises.interface"
 import Hero from "../components/Hero"
-import RandomStretchBox from "../components/RandomStretchBox"
+import ContentBox from "../components/ContentBox/ContentBox"
 
 const Home: NextPage<ExercisesProps> = (props) => {
   const exercises = props.exercises.data
   const bodyparts = props.bodyparts.data
   // console.log(exercises)
   console.log(bodyparts)
+  console.log(exercises)
 
   return (
     <div className="relative mt-10 ">
@@ -21,7 +22,7 @@ const Home: NextPage<ExercisesProps> = (props) => {
         <title>Stresk | Stretch at your Desk, reduce Stress!</title>
       </Head>
       <Hero />
-      <RandomStretchBox bodyparts={bodyparts} />
+      <ContentBox bodyparts={bodyparts} exercises={exercises} />
       <ul className="flex justify-center gap-3 px-6 py-6">
         {/* {exercises && } */}
         {exercises.map((exercise: Exercise) => (

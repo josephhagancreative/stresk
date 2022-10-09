@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import React from "react"
-import Navbar from "./Navbar"
+import Navbar from "./Navigation/Navbar"
 
 interface Props {
   children: JSX.Element

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ExerciseProps } from "../interfaces/exercises/exercises.interface"
+import { ExerciseProps } from "../../interfaces/exercises/exercises.interface"
 import Chip from "./Chip"
 
 function Card(props: ExerciseProps) {
