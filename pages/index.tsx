@@ -1,6 +1,5 @@
 import type { GetStaticProps, NextPage } from "next"
 import Head from "next/head"
-import Image from "next/image"
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client"
 import Card from "../components/Card"
 import {

@@ -60,4 +60,5 @@ export interface BodypartProps {
 
 export interface ChipProps {
   attribute: string
+  handleSelectedBodyParts: (bodypart: string) => void
 }

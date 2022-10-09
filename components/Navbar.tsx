@@ -11,12 +11,14 @@ function Navbar() {
         <div>
           <div className="flex items-center justify-between py-1 md:py-5 md:block">
             <Link href="/">
-              <Image
-                className=" cursor-pointer "
-                src={`/images/stresk-logo-sm-wt.png`}
-                width={75}
-                height={21}
-              />
+              <div>
+                <Image
+                  className=" cursor-pointer "
+                  src={`/images/stresk-logo-sm-wt.png`}
+                  width={75}
+                  height={21}
+                />
+              </div>
             </Link>
             <div className="md:hidden">
               <button
