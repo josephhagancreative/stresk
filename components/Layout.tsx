@@ -1,5 +1,6 @@
 import { NextPage } from "next"
 import React from "react"
+import Footer from "./Footer"
 import Navbar from "./Navigation/Navbar"
 
 interface Props {
@@ -11,6 +12,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <>
       <Navbar />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }

@@ -56,22 +56,14 @@ export interface ExerciseProps {
   exercise: Exercise
 }
 
-export interface ContentBoxProps {
-  bodyparts: []
-  exercises: []
-}
-
 export interface BodypartProps {
   bodyparts: []
   selectedBodyParts: string[]
-  setSelectedBodyParts: Dispatch<SetStateAction<string[]>>
   handleSelectedBodyParts: (bodypart: string) => void
   handleGo: () => void
 }
 
-export interface ChipProps {
-  attribute: string
-  handleSelectedBodyParts: (bodypart: string) => void
+export interface RandomStretchProps extends ExerciseProps {
+  handleGo: () => void
+  resetSelectedBodyParts: () => void
 }
-
-export type Toggle = "select" | "display"

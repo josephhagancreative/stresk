@@ -1,18 +1,23 @@
-import { useEffect, useState } from "react"
+import { SetStateAction, useEffect, useState } from "react"
 import {
-  BodypartProps,
   ContentBoxProps,
-  Exercise,
   Toggle,
-} from "../../interfaces/exercises/exercises.interface"
+} from "../../interfaces/components/components.interface"
+import { Exercise } from "../../interfaces/exercises/exercises.interface"
+import Spinner from "../Reusables/Spinner"
 import RandomStretch from "./RandomStretch"
 import SelectionBox from "./SelectionBox"
 
 function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
   const [selectedBodyParts, setSelectedBodyParts] = useState<string[]>([])
   const [toggleScreen, setToggleScreen] = useState<Toggle>("select")
-  const [filteredExercises, setFilteredExercises] = useState(null)
-  const [selectedExercise, setSelectedExercise] = useState(null)
+  const [filteredExercises, setFilteredExercises] = useState<null | Exercise[]>(
+    null
+  )
+  const [selectedExercise, setSelectedExercise] = useState<null | Exercise>(
+    null
+  )
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSelectedBodyParts = (bodypart: string) => {
     if (selectedBodyParts.includes(bodypart)) {
@@ -24,13 +29,10 @@ function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
     }
   }
   const handleGo = () => {
-    console.log(selectedBodyParts)
     const matchingExercises: Exercise[] = []
-
     exercises.filter((exercise: Exercise) => {
       exercise.attributes.bodyparts.data.forEach((exerciseBodypart) => {
         selectedBodyParts.forEach((bodypart) => {
-          console.log("For each 2", bodypart)
           if (exerciseBodypart.attributes.bodypart === bodypart) {
             if (matchingExercises.includes(exercise)) {
               return
@@ -45,27 +47,54 @@ function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
     setFilteredExercises(matchingExercises)
   }
 
+  // Triggered when filtered exercises is update
   useEffect(() => {
     if (filteredExercises) {
       selectRandomExercise(filteredExercises)
-      console.log(filteredExercises)
     }
-  }, [filteredExercises])
+  }, [filteredExercises, selectedExercise])
 
+  // Triggered when selected exercise is updated
   useEffect(() => {
     if (selectedExercise) {
-      console.log(selectedExercise)
+      runLoadingAnimation()
       setToggleScreen("display")
     }
-  }, [selectedExercise])
+  }, [selectedExercise, filteredExercises])
 
-  const selectRandomExercise = (exercises) => {
+  const selectRandomExercise = (exercises: Exercise[]) => {
     const result = exercises[Math.floor(Math.random() * exercises.length)]
     setSelectedExercise(result)
   }
 
+  const resetSelectedBodyParts = () => {
+    setToggleScreen("select")
+    setSelectedBodyParts([])
+  }
+
+  const runLoadingAnimation = () => {
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 800)
+  }
+
+  if (isLoading) {
+    return (
+      <div
+        className="flex justify-center content-center pb-14 bg-purple-200
+      h-96">
+        <div
+          className="flex justify-center items-center bg-neutral-100 w-11/12 rounded-lg -mt-20 p-5 scroll-mt-20"
+          id="randomBox">
+          <Spinner />
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="flex justify-center pb-10 bg-purple-200">
+    <div className="flex justify-center pb-14 bg-purple-200">
       <div
         className=" bg-neutral-100 w-11/12 rounded-lg -mt-20 p-5 scroll-mt-20"
         id="randomBox">
@@ -74,17 +103,17 @@ function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
             bodyparts={bodyparts}
             handleSelectedBodyParts={handleSelectedBodyParts}
             selectedBodyParts={selectedBodyParts}
-            setSelectedBodyParts={setSelectedBodyParts}
             handleGo={handleGo}
           />
         )}
         {toggleScreen === "display" && selectedExercise && (
-          <RandomStretch exercise={selectedExercise} />
+          <RandomStretch
+            exercise={selectedExercise}
+            handleGo={handleGo}
+            resetSelectedBodyParts={resetSelectedBodyParts}
+          />
         )}
       </div>
-      {/* <button onClick={() => selectRandomExercise(filteredExercises)}>
-        Test
-      </button> */}
     </div>
   )
 }
