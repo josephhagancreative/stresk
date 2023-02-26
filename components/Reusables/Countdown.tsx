@@ -2,11 +2,15 @@ import { useState } from "react"
 import { CountdownCircleTimer } from "react-countdown-circle-timer"
 import TimeButton from "./TimeButton"
 
+const timerDefault = [15, 10, 5, 0]
+const timer30 = [30, 25, 10, 0]
+const timer60 = [60, 55, 25, 0]
+
 function Countdown() {
   const [timer, setTimer] = useState({
     active: false,
     duration: 15,
-    timings: [15, 10, 5, 0],
+    timings: timerDefault,
   })
 
   const startTimer = (duration: number) => {
@@ -16,20 +20,20 @@ function Countdown() {
         setTimer({
           active: false,
           duration: 15,
-          timings: [15, 10, 5, 0],
+          timings: timerDefault,
         })
       }, 15000)
     } else if (duration === 30) {
       setTimer({
         active: true,
         duration: duration,
-        timings: [30, 25, 10, 0],
+        timings: timer30,
       })
       setTimeout(() => {
         setTimer({
           active: false,
           duration: 15,
-          timings: [15, 10, 5, 0],
+          timings: timerDefault,
         })
       }, 30000)
     } else if (duration === 45) {
@@ -42,20 +46,20 @@ function Countdown() {
         setTimer({
           active: false,
           duration: 15,
-          timings: [15, 10, 5, 0],
+          timings: timerDefault,
         })
       }, 45000)
     } else if (duration === 60) {
       setTimer({
         active: true,
         duration: duration,
-        timings: [60, 55, 25, 0],
+        timings: timer60,
       })
       setTimeout(() => {
         setTimer({
           active: false,
           duration: 15,
-          timings: [15, 10, 5, 0],
+          timings: timerDefault,
         })
       }, 60000)
     }
