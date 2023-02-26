@@ -14,7 +14,7 @@ function SelectionBox({
   return (
     <div>
       <h2 className="font-title font-bold text-center text-3xl mt-5">
-        Let's Stretch
+        Let&#39;s Stretch
       </h2>
       <p className="font-bold text-center text-lg mt-5 ">Select body parts:</p>
       <div className="flex flex-wrap gap-2 mt-5 px-3 justify-center">
