@@ -2,8 +2,14 @@ import { useState } from "react"
 import { CountdownCircleTimer } from "react-countdown-circle-timer"
 import TimeButton from "./TimeButton"
 
+interface TimerState {
+  active: boolean
+  duration: number
+  timings: number[]
+}
+
 function Countdown() {
-  const [timer, setTimer] = useState({
+  const [timer, setTimer] = useState<TimerState>({
     active: false,
     duration: 15,
     timings: [15, 10, 5, 0],
@@ -77,7 +83,7 @@ function Countdown() {
         </>
       )}
 
-      {/* {timer.active && (
+      {timer.active && (
         <div className="mt-2 text-purple-400 font-bold">
           <CountdownCircleTimer
             isPlaying
@@ -88,7 +94,7 @@ function Countdown() {
             {({ remainingTime }) => remainingTime}
           </CountdownCircleTimer>
         </div>
-      )} */}
+      )}
     </div>
   )
 }
