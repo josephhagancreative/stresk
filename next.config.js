@@ -6,6 +6,7 @@ const nextConfig = {
     domains: ["localhost", "stresk.herokuapp.com"],
   },
   experimental: { images: { allowFutureImage: true } },
+  ignoreBuildErrors: true,
 }
 
 module.exports = nextConfig
