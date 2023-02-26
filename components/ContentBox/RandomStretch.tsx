@@ -11,7 +11,7 @@ function RandomStretch({
   resetSelectedBodyParts,
 }: RandomStretchProps) {
   const { name, slug, details, excerpt } = exercise.attributes
-  const imgUrl = `http://localhost:8888${exercise.attributes.image.data.attributes.url}`
+  const imgUrl = `https://stresk.herokuapp.com${exercise.attributes.image.data.attributes.url}`
   const bodyparts = exercise.attributes.bodyparts.data
   return (
     <div>

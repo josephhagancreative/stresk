@@ -27,7 +27,7 @@ const Home: NextPage<ExercisesProps> = (props) => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const client = new ApolloClient({
-    uri: "http://localhost:8888/graphql",
+    uri: "https://stresk.herokuapp.com/graphql",
     cache: new InMemoryCache(),
   })
 
