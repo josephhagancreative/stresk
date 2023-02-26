@@ -2,14 +2,8 @@ import { useState } from "react"
 import { CountdownCircleTimer } from "react-countdown-circle-timer"
 import TimeButton from "./TimeButton"
 
-interface TimerState {
-  active: boolean
-  duration: number
-  timings: number[]
-}
-
 function Countdown() {
-  const [timer, setTimer] = useState<TimerState>({
+  const [timer, setTimer] = useState({
     active: false,
     duration: 15,
     timings: [15, 10, 5, 0],
