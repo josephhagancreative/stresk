@@ -77,7 +77,7 @@ function Countdown() {
         </>
       )}
 
-      {timer.active && (
+      {/* {timer.active && (
         <div className="mt-2 text-purple-400 font-bold">
           <CountdownCircleTimer
             isPlaying
@@ -88,7 +88,7 @@ function Countdown() {
             {({ remainingTime }) => remainingTime}
           </CountdownCircleTimer>
         </div>
-      )}
+      )} */}
     </div>
   )
 }
