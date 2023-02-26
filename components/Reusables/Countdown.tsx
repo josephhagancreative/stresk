@@ -2,15 +2,11 @@ import { useState } from "react"
 import { CountdownCircleTimer } from "react-countdown-circle-timer"
 import TimeButton from "./TimeButton"
 
-const timerDefault = [15, 10, 5, 0]
-const timer30 = [30, 25, 10, 0]
-const timer60 = [60, 55, 25, 0]
-
 function Countdown() {
   const [timer, setTimer] = useState({
     active: false,
     duration: 15,
-    timings: timerDefault,
+    timings: [15, 10, 5, 0],
   })
 
   const startTimer = (duration: number) => {
@@ -20,20 +16,20 @@ function Countdown() {
         setTimer({
           active: false,
           duration: 15,
-          timings: timerDefault,
+          timings: [15, 10, 5, 0],
         })
       }, 15000)
     } else if (duration === 30) {
       setTimer({
         active: true,
         duration: duration,
-        timings: timer30,
+        timings: [30, 25, 10, 0],
       })
       setTimeout(() => {
         setTimer({
           active: false,
           duration: 15,
-          timings: timerDefault,
+          timings: [15, 10, 5, 0],
         })
       }, 30000)
     } else if (duration === 45) {
@@ -46,20 +42,20 @@ function Countdown() {
         setTimer({
           active: false,
           duration: 15,
-          timings: timerDefault,
+          timings: [15, 10, 5, 0],
         })
       }, 45000)
     } else if (duration === 60) {
       setTimer({
         active: true,
         duration: duration,
-        timings: timer60,
+        timings: [60, 55, 25, 0],
       })
       setTimeout(() => {
         setTimer({
           active: false,
           duration: 15,
-          timings: timerDefault,
+          timings: [15, 10, 5, 0],
         })
       }, 60000)
     }
@@ -86,8 +82,9 @@ function Countdown() {
           <CountdownCircleTimer
             isPlaying
             duration={timer.duration}
-            colors={["#f3e8ff", "#d8b4fe", "#a855f7", "#6b21a8"]}
-            colorsTime={timer.timings}
+            colors={`#a855f7`}
+            // colors={["#f3e8ff", "#d8b4fe", "#a855f7", "#6b21a8"]}
+            // colorsTime={timer.timings}
             size={50}>
             {({ remainingTime }) => remainingTime}
           </CountdownCircleTimer>
