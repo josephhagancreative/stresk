@@ -1,6 +1,5 @@
 import type { GetStaticProps, NextPage } from "next"
 import Head from "next/head"
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client"
 import {
   Exercise,
   ExercisesProps,
@@ -12,6 +11,8 @@ import SuggestedStretches from "../components/SuggestedStretches"
 const Home: NextPage<ExercisesProps> = (props) => {
   const exercises = props.exercises.data
   const bodyparts = props.bodyparts.data
+
+  console.log(exercises)
 
   return (
     <div className="relative mt-10 ">
@@ -25,66 +26,23 @@ const Home: NextPage<ExercisesProps> = (props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const client = new ApolloClient({
-    uri: "https://stresk.herokuapp.com/graphql",
-    cache: new InMemoryCache(),
-  })
+export const getStaticProps: GetStaticProps = async () => {
+  const [exercisesRes, bodypartsRes] = await Promise.all([
+    fetch(
+      "https://stresk-strapi-cloudinary-ii.onrender.com/api/exercises?populate=*"
+    ),
+    fetch("https://stresk-strapi-cloudinary-ii.onrender.com/api/bodyparts"),
+  ])
 
-  const { data } = await client.query({
-    query: gql`
-      query {
-        exercises {
-          data {
-            id
-            attributes {
-              name
-              slug
-              excerpt
-              image {
-                data {
-                  id
-                  attributes {
-                    url
-                  }
-                }
-              }
-              video {
-                data {
-                  id
-                  attributes {
-                    url
-                  }
-                }
-              }
-              bodyparts {
-                data {
-                  id
-                  attributes {
-                    bodypart
-                  }
-                }
-              }
-              details
-            }
-          }
-        }
-        bodyparts {
-          data {
-            id
-            attributes {
-              bodypart
-            }
-          }
-        }
-      }
-    `,
-  })
+  const [exercises, bodyparts] = await Promise.all([
+    exercisesRes.json(),
+    bodypartsRes.json(),
+  ])
 
   return {
     props: {
-      exercises: data.exercises,
-      bodyparts: data.bodyparts,
+      exercises,
+      bodyparts,
     },
   }
 }

@@ -28,6 +28,7 @@ export interface Exercise {
       data: {
         id: string | number
         attributes: {
+          formats: any
           url: string
         }
       }

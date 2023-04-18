@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { CountdownCircleTimer } from "react-countdown-circle-timer"
 import TimeButton from "./TimeButton"
+import ReactHowler from "react-howler"
 
 function Countdown() {
   const [timer, setTimer] = useState({
@@ -8,6 +9,8 @@ function Countdown() {
     duration: 15,
     timings: [15, 10, 5, 0],
   })
+
+  const [isFinished, setIsFinished] = useState(false)
 
   const startTimer = (duration: number) => {
     if (duration === 15) {
@@ -74,18 +77,31 @@ function Countdown() {
             <TimeButton duration={45} startTimer={startTimer} />
             <TimeButton duration={60} startTimer={startTimer} />
           </div>
+          {isFinished && (
+            <ReactHowler
+              src={`https://stresk.herokuapp.com/uploads/bell_1bf3d5f27d.wav?updated_at=2023-04-04T01:33:00.805Z`}
+              playing={true}
+            />
+          )}
         </>
       )}
 
       {timer.active && (
-        <div className="mt-2 text-purple-400 font-bold">
+        <div className="mt-2 text-purple-400 font-bold text-3xl">
           <CountdownCircleTimer
             isPlaying
             duration={timer.duration}
             colors={`#a855f7`}
             // colors={["#f3e8ff", "#d8b4fe", "#a855f7", "#6b21a8"]}
             // colorsTime={timer.timings}
-            size={50}>
+            size={90}
+            onComplete={() => {
+              setIsFinished(true)
+              setTimeout(() => {
+                setIsFinished(false)
+              }, 3000)
+              return
+            }}>
             {({ remainingTime }) => remainingTime}
           </CountdownCircleTimer>
         </div>
