@@ -12,8 +12,6 @@ const Home: NextPage<ExercisesProps> = (props) => {
   const exercises = props.exercises.data
   const bodyparts = props.bodyparts.data
 
-  console.log(exercises)
-
   return (
     <div className="relative mt-10 ">
       <Head>

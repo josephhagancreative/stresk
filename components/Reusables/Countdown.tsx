@@ -79,7 +79,7 @@ function Countdown() {
           </div>
           {isFinished && (
             <ReactHowler
-              src={`https://stresk.herokuapp.com/uploads/bell_1bf3d5f27d.wav?updated_at=2023-04-04T01:33:00.805Z`}
+              src={`https://res.cloudinary.com/joseph-hagan-creative/video/upload/v1681955107/Chime_zrghry.mp3`}
               playing={true}
             />
           )}

@@ -5,7 +5,7 @@ function Hero() {
     <>
       <section className="flex justify-center items-center text-center min-h-screen bg-gradient-to-r from-purplebg to-blackbg -mt-7 ">
         <div className="m-auto">
-          <h1 className="font-bold font-title leading-tight text-6xl text-purple-200 ">
+          <h1 className="font-bold font-title leading-tight text-6xl text-purple-200 px-2">
             <span className="text-neutral-100">Stretch </span>
             at your
             <span className="text-neutral-100"> Desk</span>
