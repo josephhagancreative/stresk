@@ -27,5 +27,5 @@ module.exports = {
       title: "Nunito",
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 }

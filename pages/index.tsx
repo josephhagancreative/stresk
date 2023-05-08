@@ -19,7 +19,7 @@ const Home: NextPage<ExercisesProps> = (props) => {
       </Head>
       <Hero />
       <ContentBox bodyparts={bodyparts} exercises={exercises} />
-      <SuggestedStretches />
+      <SuggestedStretches bodyparts={bodyparts} exercises={exercises} />
     </div>
   )
 }
