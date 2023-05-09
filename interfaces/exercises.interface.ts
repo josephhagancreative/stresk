@@ -1,14 +1,17 @@
-export interface Bodypart {
-  id: number
-  attributes: {
-    bodypart: string
-    createdAt: string
-    updatedAt: string
-    publishedAt: string
+import { Dispatch, SetStateAction } from "react"
+
+export interface ExercisesProps {
+  exercises: {
+    data: []
+  }
+  bodyparts: {
+    data: []
   }
 }
 
 export interface Exercise {
+  name: string | undefined
+  data: any
   id: number
   attributes: {
     name: string
@@ -92,11 +95,38 @@ export interface Exercise {
   }
 }
 
+export interface Bodypart {
+  id: number
+  attributes: {
+    bodypart: string
+    createdAt: string
+    updatedAt: string
+    publishedAt: string
+  }
+}
+
 export interface ExerciseDropdownProps {
   bodyparts: Bodypart[]
   exercises: Exercise[]
 }
 
+export interface ExerciseProps {
+  exercise: Exercise
+}
+
+export interface BodypartProps {
+  bodyparts: []
+  selectedBodyParts: string[]
+  handleSelectedBodyParts: (bodypart: string) => void
+  handleGo: () => void
+}
+
+export interface RandomStretchProps extends ExerciseProps {
+  handleGo: () => void
+  resetSelectedBodyParts: () => void
+}
+
+// Components Types
 export interface ContentBoxProps {
   bodyparts: []
   exercises: []

@@ -1,5 +1,5 @@
 import React from "react"
-import { TimeButtonProps } from "../../interfaces/components/components.interface"
+import { TimeButtonProps } from "../../interfaces/exercises.interface"
 
 function TimeButton({ duration, startTimer }: TimeButtonProps) {
   return (

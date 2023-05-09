@@ -1,8 +1,5 @@
 import React from "react"
-import {
-  Bodypart,
-  BodypartProps,
-} from "../../interfaces/exercises/exercises.interface"
+import { Bodypart, BodypartProps } from "../../interfaces/exercises.interface"
 import Chip from "../Reusables/Chip"
 
 function SelectionBox({

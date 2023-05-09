@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { ExerciseDropdownProps } from "../interfaces/components/components.interface"
 import Card from "./Reusables/Card"
+import { ExerciseDropdownProps } from "../interfaces/exercises.interface"
 
 interface BodyPartChangeEvent {
   target: {
@@ -29,7 +29,7 @@ function SuggestedStretches({ bodyparts, exercises }: ExerciseDropdownProps) {
       </h2>
       <div className="flex justify-center py-3">
         <select
-          className="py-3 px-4 pr-9 block border-gray-200 rounded-full text-sm focus:border-purple-500 focus:ring-purple-500 bg-purple-200 0 text-gray-800"
+          className="py-3 px-4 pr-9 block border-gray-200 rounded-full text-sm focus:border-purple-500 focus:ring-purple-500 bg-purple-200 hover:bg-purple-300 0 text-gray-800 cursor-pointer"
           value={selectedBodypart}
           onChange={handleBodyPartChange}>
           <option className="text-gray-400" value="">

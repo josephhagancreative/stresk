@@ -1,19 +1,21 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ExerciseProps } from "../../interfaces/exercises/exercises.interface"
+import { ExerciseProps } from "../../interfaces/exercises.interface"
 
 function Card({ exercise }: ExerciseProps) {
   const { name, slug, details, excerpt } = exercise.attributes
   const imgUrl = exercise.attributes.image.data.attributes.formats.large.url
+  const id = exercise.id
   const bodyparts = exercise.attributes.bodyparts.data
   return (
-    <Link href={`/stretches/${slug}`}>
+    <Link href={`/stretches/${id}`}>
       <div className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer w-56 bg-gradient-to-r from-purplebg to-blackbg  ">
         <Image
           className="object-cover w-full h-48 mix-blend-overlay "
           src={imgUrl}
           width={500}
           height={300}
+          alt={name}
           layout="responsive"
         />
 

@@ -1,9 +1,9 @@
 import { SetStateAction, useEffect, useState } from "react"
 import {
   ContentBoxProps,
+  Exercise,
   Toggle,
-} from "../../interfaces/components/components.interface"
-import { Exercise } from "../../interfaces/exercises/exercises.interface"
+} from "../../interfaces/exercises.interface"
 import Spinner from "../Reusables/Spinner"
 import RandomStretch from "./RandomStretch"
 import SelectionBox from "./SelectionBox"

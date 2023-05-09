@@ -15,6 +15,7 @@ function Navbar() {
                 <Image
                   className=" cursor-pointer "
                   src={`/images/stresk-logo-sm-wt.png`}
+                  alt="Stresk Logo"
                   width={75}
                   height={21}
                 />

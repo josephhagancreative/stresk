@@ -1,9 +1,6 @@
 import type { GetStaticProps, NextPage } from "next"
 import Head from "next/head"
-import {
-  Exercise,
-  ExercisesProps,
-} from "../interfaces/exercises/exercises.interface"
+import { Exercise, ExercisesProps } from "../interfaces/exercises.interface"
 import Hero from "../components/Hero"
 import ContentBox from "../components/ContentBox/ContentBox"
 import SuggestedStretches from "../components/SuggestedStretches"

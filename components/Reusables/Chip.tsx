@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { ChipProps } from "../../interfaces/components/components.interface"
+import { ChipProps } from "../../interfaces/exercises.interface"
 
 function Chip({ attribute, handleSelectedBodyParts }: ChipProps) {
   const [isSelected, setIsSelected] = useState(false)
