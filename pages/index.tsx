@@ -1,5 +1,4 @@
 import type { GetStaticProps, NextPage } from "next"
-import { useRouter } from "next/router"
 import Head from "next/head"
 import { Exercise, ExercisesProps } from "../interfaces/exercises.interface"
 import Hero from "../components/Hero"
@@ -10,12 +9,6 @@ const Home: NextPage<ExercisesProps> = (props) => {
   const exercises = props.exercises.data
   const bodyparts = props.bodyparts.data
 
-  const router = useRouter()
-
-  const handleClick = () => {
-    router.push("/contact")
-  }
-
   return (
     <div className="relative mt-10 ">
       <Head>
@@ -23,7 +16,6 @@ const Home: NextPage<ExercisesProps> = (props) => {
       </Head>
       <Hero />
       <ContentBox bodyparts={bodyparts} exercises={exercises} />
-      <button onClick={handleClick}>Hello</button>
       <SuggestedStretches bodyparts={bodyparts} exercises={exercises} />
     </div>
   )
