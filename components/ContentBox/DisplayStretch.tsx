@@ -1,21 +1,33 @@
 import ReactMarkdown from "react-markdown"
-import { ArrowLeftIcon, ArrowPathIcon } from "@heroicons/react/24/solid"
+import {
+  ArrowLeftIcon,
+  ArrowPathIcon,
+  StarIcon,
+} from "@heroicons/react/24/solid"
+import { StarIcon as StarOutline } from "@heroicons/react/24/outline"
 import Image from "next/image"
-import Countdown from "./Reusables/Countdown"
-import { ExerciseProps } from "../interfaces/exercises.interface"
+import Countdown from "../Reusables/Countdown"
+import { ExerciseProps } from "../../interfaces/exercises.interface"
+import { useRouter } from "next/router"
 
 function DisplayStretch({ exercise }: ExerciseProps) {
+  const router = useRouter()
+
+  const onBackClick = () => {
+    router.back()
+  }
+
   return (
     <div className="  bg-neutral-100 rounded-lg p-5" id="randomBox">
       <div className="flex justify-between items-center">
-        <button className="">
+        <button className="" onClick={onBackClick}>
           <ArrowLeftIcon className="h-6 w-6  inline text-neutral-800" />
         </button>
         <h2 className="font-title font-bold text-center text-2xl px-2">
           {exercise.data.attributes.name}
         </h2>
         <button className="">
-          <ArrowPathIcon className="h-6 w-6  inline text-neutral-800" />
+          <StarOutline className="h-6 w-6  inline text-neutral-800" />
         </button>
       </div>
       <div className="mt-5">

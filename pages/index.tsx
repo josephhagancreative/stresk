@@ -3,7 +3,7 @@ import Head from "next/head"
 import { Exercise, ExercisesProps } from "../interfaces/exercises.interface"
 import Hero from "../components/Hero"
 import ContentBox from "../components/ContentBox/ContentBox"
-import SuggestedStretches from "../components/SuggestedStretches"
+import BodypartSelect from "../components/Reusables/BodypartSelect"
 
 const Home: NextPage<ExercisesProps> = (props) => {
   const exercises = props.exercises.data
@@ -16,7 +16,7 @@ const Home: NextPage<ExercisesProps> = (props) => {
       </Head>
       <Hero />
       <ContentBox bodyparts={bodyparts} exercises={exercises} />
-      <SuggestedStretches bodyparts={bodyparts} exercises={exercises} />
+      <BodypartSelect bodyparts={bodyparts} />
     </div>
   )
 }
@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
       exercises,
       bodyparts,
     },
-    revalidate: 3600,
+    revalidate: 60,
   }
 }
 
