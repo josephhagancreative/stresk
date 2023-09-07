@@ -107,7 +107,6 @@ export interface Bodypart {
 
 export interface ExerciseDropdownProps {
   bodyparts: Bodypart[]
-  exercises: Exercise[]
 }
 
 export interface ExerciseProps {
@@ -135,6 +134,11 @@ export interface ContentBoxProps {
 export interface ChipProps {
   attribute: string
   handleSelectedBodyParts: (bodypart: string) => void
+}
+
+export interface PillProps {
+  name: string
+  route: number
 }
 
 export type Toggle = "select" | "display"

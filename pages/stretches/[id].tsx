@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next"
-import DisplayStretch from "../../components/DisplayStretch"
+import DisplayStretch from "../../components/ContentBox/DisplayStretch"
 import { Exercise, ExerciseProps } from "../../interfaces/exercises.interface"
 
 function Exercise({ exercise }: ExerciseProps) {
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       exercise,
     },
-    revalidate: 3600,
+    revalidate: 60,
   }
 }
 
