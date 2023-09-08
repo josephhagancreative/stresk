@@ -1,6 +1,7 @@
 import React from "react"
 import { Bodypart, BodypartProps } from "../../interfaces/exercises.interface"
 import Chip from "../Reusables/Chip"
+import { motion } from "framer-motion"
 
 function SelectionBox({
   bodyparts,
@@ -30,13 +31,15 @@ function SelectionBox({
         </p>
       )}
       <div className="flex justify-center mt-5">
-        <button
+        <motion.button
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 1.1 }}
           onClick={handleGo}
           className="rounded-full bg-purple-800 text-neutral-100 
           text-xl font-bold font-title cursor-pointer  transition duration-300 ease p-5 hover:bg-purple-400 hover:text-neutral-900 disabled:bg-neutral-400"
           disabled={selectedBodyParts.length == 0}>
           GO
-        </button>
+        </motion.button>
       </div>
     </div>
   )
