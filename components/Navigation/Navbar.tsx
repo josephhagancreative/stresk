@@ -63,16 +63,40 @@ function Navbar() {
             }`}>
             <ul className="items-center justify-center text-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-neutral-100 hover:text-neutral-300">
-                <Link href="/">Home</Link>
+                <Link href="/">
+                  <p
+                    className="cursor-pointer"
+                    onClick={() => setNavbar(false)}>
+                    Home
+                  </p>
+                </Link>
               </li>
               <li className="text-neutral-100 hover:text-neutral-300 ">
-                <Link href="/stretches">Stretches</Link>
+                <Link href="/stretches">
+                  <p
+                    className="cursor-pointer"
+                    onClick={() => setNavbar(false)}>
+                    Stretches
+                  </p>
+                </Link>
               </li>
               <li className="text-neutral-100 hover:text-neutral-300">
-                <Link href="/contact">Contact</Link>
+                <Link href="/contact">
+                  <p
+                    className="cursor-pointer"
+                    onClick={() => setNavbar(false)}>
+                    Contact
+                  </p>
+                </Link>
               </li>
               <li className="text-neutral-100 hover:text-neutral-300">
-                <Link href="/login">Login</Link>
+                <Link href="/login">
+                  <p
+                    className="cursor-pointer"
+                    onClick={() => setNavbar(false)}>
+                    Login
+                  </p>
+                </Link>
               </li>
             </ul>
           </div>
