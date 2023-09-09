@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react"
+import { ReactElement } from "react-markdown/lib/react-markdown"
 
 export interface ExercisesProps {
   exercises: {
@@ -124,6 +125,12 @@ export interface RandomStretchProps extends ExerciseProps {
   handleGo: () => void
   resetSelectedBodyParts: () => void
 }
+export interface DisplayStretchProps extends ExerciseProps {
+  backArrowOnClick: () => void
+  bigButtonOnClick: () => void
+  buttonText: string
+  buttonIcon: ReactElement
+}
 
 // Components Types
 export interface ContentBoxProps {
@@ -139,6 +146,18 @@ export interface ChipProps {
 export interface PillProps {
   name: string
   route: number
+}
+
+export interface BigButtonProps {
+  handleGo: () => void
+  text: string
+  icon: ReactElement
+}
+
+export interface OutlineButtonProps {
+  text: string
+  icon: ReactElement
+  onClick: () => void
 }
 
 export type Toggle = "select" | "display"

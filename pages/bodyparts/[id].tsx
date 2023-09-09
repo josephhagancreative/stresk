@@ -1,8 +1,18 @@
 import { GetStaticProps } from "next"
 import { Bodypart, Exercise } from "../../interfaces/exercises.interface"
 import Card from "../../components/Reusables/Card"
+import OutlineButton from "../../components/Reusables/OutlineButton"
+import { ArrowLeftIcon } from "@heroicons/react/24/solid"
+import { useRouter } from "next/router"
 
 function Bodypart({ exercises, name }: any) {
+  const icon = <ArrowLeftIcon className="h-6 w-6  inline text-white" />
+
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.back()
+  }
   return (
     <>
       <section className="flex flex-col justify-start pt-20 min-h-screen bg-gradient-to-r from-purplebg to-blackbg">
@@ -20,6 +30,9 @@ function Bodypart({ exercises, name }: any) {
                 <Card key={exercise.id} exercise={exercise} />
               ))}
           </div>
+        </div>
+        <div className="px-4 pt-10">
+          <OutlineButton icon={icon} text="Back" onClick={handleClick} />
         </div>
       </section>
     </>

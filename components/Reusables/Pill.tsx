@@ -10,8 +10,8 @@ function Pill({ name, route }: PillProps) {
   return (
     <span
       onClick={handleClick}
-      className={`px-2 py-1 rounded-full font-title bg-purple-200
-       text-neutral-700 text-sm font-semibold  w-max cursor-pointer transition duration-300 ease md:hover:bg-purple-400 active:bg-purple-500  `}>
+      className={`px-2 py-1 rounded-full font-title bg-purple-300
+       text-neutral-700 text-sm font-semibold  w-max cursor-pointer transition duration-300 ease hover:bg-purple-400 active:bg-purple-500  `}>
       {name}
     </span>
   )

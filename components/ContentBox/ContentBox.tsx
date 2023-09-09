@@ -5,8 +5,9 @@ import {
   Toggle,
 } from "../../interfaces/exercises.interface"
 import Spinner from "../Reusables/Spinner"
-import RandomStretch from "./RandomStretch"
 import SelectionBox from "./SelectionBox"
+import DisplayStretch from "../Reusables/DisplayStretch"
+import { ArrowPathIcon } from "@heroicons/react/24/solid"
 
 function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
   const [selectedBodyParts, setSelectedBodyParts] = useState<string[]>([])
@@ -18,6 +19,10 @@ function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
     null
   )
   const [isLoading, setIsLoading] = useState(false)
+
+  const icon = (
+    <ArrowPathIcon className="h-6 w-6 inline ml-2  text-neutral-100" />
+  )
 
   const handleSelectedBodyParts = (bodypart: string) => {
     if (selectedBodyParts.includes(bodypart)) {
@@ -76,7 +81,7 @@ function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
-    }, 800)
+    }, 500)
   }
 
   if (isLoading) {
@@ -107,10 +112,12 @@ function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
           />
         )}
         {toggleScreen === "display" && selectedExercise && (
-          <RandomStretch
+          <DisplayStretch
             exercise={selectedExercise}
-            handleGo={handleGo}
-            resetSelectedBodyParts={resetSelectedBodyParts}
+            backArrowOnClick={resetSelectedBodyParts}
+            bigButtonOnClick={handleGo}
+            buttonIcon={icon}
+            buttonText="Again"
           />
         )}
       </div>

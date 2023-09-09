@@ -1,7 +1,11 @@
 import { ArrowDownCircleIcon } from "@heroicons/react/24/solid"
 import { motion } from "framer-motion"
+import BigButton from "./Reusables/BigButton"
 
 function Hero() {
+  const icon = (
+    <ArrowDownCircleIcon className=" ml-2 h-6 w-6 inline text-neutral-100" />
+  )
   return (
     <>
       <section className="flex justify-center items-center text-center min-h-screen bg-gradient-to-r from-purplebg to-blackbg -mt-7 ">
@@ -17,14 +21,9 @@ function Hero() {
           <p className="mt-5 text-purple-100">
             Choose some body parts and get a random stretch whenever you need it
           </p>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            className="inline-block px-6 py-2.5 mt-10 bg-purple-500 text-neutral-50  text-shadow font-title font-black text-lg leading-tight tracking-wider rounded-full hover:bg-purple-400 hover:shadow-md focus:bg-purple-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-700 active:shadow-lg transition duration-150 ease-in-out">
-            <a href="#randomBox">
-              Stretch Now
-              <ArrowDownCircleIcon className=" ml-2 h-6 w-6 inline text-neutral-100" />
-            </a>
-          </motion.button>
+          <div className="inline-block mt-10">
+            <BigButton handleGo={() => {}} icon={icon} text="Stretch Now" />
+          </div>
         </div>
       </section>
     </>
