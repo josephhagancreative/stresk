@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Pill from "./Pill"
 import { ExerciseProps } from "../../interfaces/exercises.interface"
+import { motion } from "framer-motion"
 
 function Card({ exercise }: ExerciseProps) {
   const { name, excerpt } = exercise.attributes
@@ -9,7 +10,11 @@ function Card({ exercise }: ExerciseProps) {
   const id = exercise.id
   const bodyparts = exercise.attributes.bodyparts.data
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer w-64 bg-white border-solid border-4 border-purple-50 ">
+    <motion.div
+      className="relative overflow-hidden rounded-lg hover:shadow-lg cursor-pointer w-64 bg-white border-solid border-4 border-purple-50 "
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 400, damping: 20 }}>
       <Link href={`/stretches/${id}`}>
         <div>
           <Image
@@ -40,7 +45,7 @@ function Card({ exercise }: ExerciseProps) {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

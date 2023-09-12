@@ -8,7 +8,7 @@ function BigButton({ handleGo, text, icon }: BigButtonProps) {
       whileTap={{ scale: 0.9 }}
       transition={{ type: "spring", stiffness: 400, damping: 15 }}
       onClick={handleGo}
-      className="rounded-full flex justify-center bg-purple-500 text-neutral-100 
+      className="rounded-full flex justify-center bg-purple-500 text-gray-50 
           text-xl font-bold font-title cursor-pointer px-6 py-2.5 hover:shadow-md ">
       <a href="#randomBox">
         {text}

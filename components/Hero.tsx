@@ -11,9 +11,9 @@ function Hero() {
       <section className="flex justify-center items-center text-center min-h-screen bg-gradient-to-r from-purplebg to-blackbg -mt-7 ">
         <div className="m-auto">
           <h1 className="font-bold font-title leading-tight text-6xl text-purple-200 px-2">
-            <span className="text-neutral-100">Stretch </span>
+            <span className="text-gray-50">Stretch </span>
             at your
-            <span className="text-neutral-100"> Desk</span>
+            <span className="text-gray-50"> Desk</span>
           </h1>
           <h2 className="font-medium font-title leading-tight text-4xl mt-5 text-purple-400">
             Reduce Stress

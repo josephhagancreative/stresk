@@ -160,6 +160,14 @@ export interface OutlineButtonProps {
   onClick: () => void
 }
 
+export interface MobileNavLinksProps {
+  setShowNav: (arg0: boolean) => void
+}
+export interface HamburgerProps {
+  showNav: boolean
+  setShowNav: (arg0: boolean) => void
+}
+
 export type Toggle = "select" | "display"
 
 export type TimeButtonProps = {

@@ -16,14 +16,15 @@ function Bodypart({ exercises, name }: any) {
   return (
     <>
       <section className="flex flex-col justify-start pt-20 min-h-screen bg-gradient-to-r from-purplebg to-blackbg">
-        <div className="mb-10 px-4">
+        <div className="mb-5 px-4">
           {name && (
             <p className="text-3xl font-semibold text-white">
               Stretches for {name}
             </p>
           )}
         </div>
-        <div className="flex justify-start items-center text-center px-4 relative overflow-x-scroll scrollbar-hide">
+
+        <div className="flex justify-start items-center text-center px-4 relative overflow-y-visible overflow-x-scroll scrollbar-hide py-6">
           <div className=" flex flex-row gap-5 scrollbar-hide overscroll-contain">
             {exercises &&
               exercises.map((exercise: Exercise) => (
@@ -31,7 +32,8 @@ function Bodypart({ exercises, name }: any) {
               ))}
           </div>
         </div>
-        <div className="px-4 pt-10">
+
+        <div className="px-4 pt-5">
           <OutlineButton icon={icon} text="Back" onClick={handleClick} />
         </div>
       </section>
