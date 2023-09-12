@@ -22,20 +22,24 @@ function StretchesPage({ exerciseObjArr }: any) {
       <section className="flex flex-col justify-start pt-20 min-h-screen bg-gradient-to-r from-purplebg to-blackbg">
         <div className=" flex flex-col scrollbar-hide overscroll-contain">
           {exerciseObjArr &&
-            exerciseObjArr.map((exerciseObj: ExerciseObjProps) => (
-              <div className="justify-start py-2">
-                <h2 className="text-3xl p-4 text-left font-semibold text-white">
-                  {exerciseObj.name}
-                </h2>
-                <div className="flex justify-start items-center relative overflow-y-visible overflow-x-scroll scrollbar-hide py-6">
-                  <div className="flex flex-row gap-5 px-4 scrollbar-hide overscroll-contain">
-                    {exerciseObj.bodypartExercises.map((exercise: Exercise) => (
-                      <Card exercise={exercise} key={exercise.id} />
-                    ))}
+            exerciseObjArr.map(
+              (exerciseObj: ExerciseObjProps, index: number) => (
+                <div className="justify-start py-2" key={index}>
+                  <h2 className="text-3xl p-4 text-left font-semibold text-white">
+                    {exerciseObj.name}
+                  </h2>
+                  <div className="flex justify-start items-center relative overflow-y-visible overflow-x-scroll scrollbar-hide py-6">
+                    <div className="flex flex-row gap-5 px-4 scrollbar-hide overscroll-contain">
+                      {exerciseObj.bodypartExercises.map(
+                        (exercise: Exercise) => (
+                          <Card exercise={exercise} key={exercise.id} />
+                        )
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
         </div>
 
         <div className="px-4 py-5">
