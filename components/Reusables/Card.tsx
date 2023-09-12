@@ -12,7 +12,6 @@ function Card({ exercise }: ExerciseProps) {
   return (
     <motion.div
       className="relative overflow-hidden rounded-lg hover:shadow-lg cursor-pointer w-64 bg-white border-solid border-4 border-purple-50 "
-      whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}>
       <Link href={`/stretches/${id}`}>

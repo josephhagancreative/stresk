@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react"
 import { ReactElement } from "react-markdown/lib/react-markdown"
 
 export interface ExercisesProps {
@@ -174,3 +173,7 @@ export type TimeButtonProps = {
   duration: number
   startTimer: (duration: number) => void
 }
+
+export type ExerciseObjProps = { name: string; bodypartExercises: Exercise[] }
+
+export type ExerciseObjArrProps = ExerciseObjProps[]
