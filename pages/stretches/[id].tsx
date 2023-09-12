@@ -17,7 +17,7 @@ function Exercise({ exercise }: ExerciseProps) {
   }
 
   return (
-    <div className="relative mx-auto mt-16 p-5 md:max-w-5xl border shadow-md my-8 rounded-md ">
+    <div className="relative mx-auto mt-16 p-5 md:max-w-5xl border shadow-md my-8 rounded-md  ">
       <DisplayStretch
         exercise={exerciseData}
         backArrowOnClick={onBackClick}

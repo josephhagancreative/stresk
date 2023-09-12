@@ -15,11 +15,14 @@ function Bodypart({ exercises, name }: any) {
   }
   return (
     <div className="min-h-screen bg-gradient-to-r from-purplebg to-blackbg">
-      <section className="flex flex-col justify-start pt-20   mx-auto md:max-w-5xl">
+      <section className="flex flex-col justify-start pt-20 mx-auto md:max-w-6xl">
         <div className="mb-5 px-4 ">
           {name && (
             <p className="text-3xl font-semibold text-white">
-              Stretches for {name}
+              Stretches for {name}{" "}
+              <span className="text-gray-300 text-xl">
+                ({exercises.length})
+              </span>
             </p>
           )}
         </div>

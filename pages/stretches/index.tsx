@@ -18,8 +18,8 @@ function StretchesPage({ exerciseObjArr }: any) {
     router.back()
   }
   return (
-    <>
-      <section className="flex flex-col justify-start pt-20 min-h-screen bg-gradient-to-r from-purplebg to-blackbg">
+    <div className="min-h-screen bg-gradient-to-r from-purplebg to-blackbg">
+      <section className="flex flex-col justify-start pt-20  mx-auto md:max-w-6xl">
         <div className=" flex flex-col scrollbar-hide overscroll-contain">
           {exerciseObjArr &&
             exerciseObjArr.map(
@@ -49,7 +49,7 @@ function StretchesPage({ exerciseObjArr }: any) {
           <OutlineButton icon={icon} text="Back" onClick={handleClick} />
         </div>
       </section>
-    </>
+    </div>
   )
 }
 
