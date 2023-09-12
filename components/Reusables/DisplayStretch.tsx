@@ -41,44 +41,48 @@ function DisplayStretch({
           <StarOutline className="h-6 w-6  inline text-neutral-800" />
         </motion.button>
       </div>
-      <div className="mt-5 relative w-full">
-        <CldVideoPlayer
-          width="720"
-          height="480"
-          src={videoUrl}
-          colors={{
-            accent: "#f2dbf8",
-            base: "#524173",
-            text: "#f2dbf8",
-          }}
-          autoPlay="always"
-          loop={true}
-          muted={true}
-        />
-      </div>
-      <div className="flex mt-1 justify-center">
-        <Countdown />
-      </div>
-
-      <div className=" text-left text-sm mt-5 bg-purple-100 rounded-md p-5 text-neutral-800 leading-relaxed">
-        <h3 className="font-bold mb-2">Instructions:</h3>
-        <ReactMarkdown>{exercise.attributes.details}</ReactMarkdown>
-      </div>
-      <div className="flex pt-5 gap-2">
-        {exercise.attributes.bodyparts.data.map((bodypart) => (
-          <Pill
-            key={bodypart.id}
-            name={bodypart.attributes.bodypart}
-            route={bodypart.id}
+      <div className="mt-5 relative w-full md:flex md:w-full gap-2">
+        <div className="flex flex-1 w-2/3 overflow-hidden rounded-md">
+          <CldVideoPlayer
+            width="720"
+            height="480"
+            src={videoUrl}
+            colors={{
+              accent: "#f2dbf8",
+              base: "#524173",
+              text: "#f2dbf8",
+            }}
+            autoPlay="always"
+            loop={true}
+            muted={true}
           />
-        ))}
-      </div>
-      <div className="flex justify-center pt-5">
-        <BigButton
-          handleGo={bigButtonOnClick}
-          text={buttonText}
-          icon={buttonIcon}
-        />
+        </div>
+        <div className="flex w-1/3 flex-col gap-2 md:ml-4">
+          <div className="flex mt-1 justify-center">
+            <Countdown />
+          </div>
+
+          <div className=" text-left text-sm mt-5 bg-purple-100 rounded-md p-5 text-neutral-800 leading-relaxed">
+            <h3 className="font-bold mb-2">Instructions:</h3>
+            <ReactMarkdown>{exercise.attributes.details}</ReactMarkdown>
+          </div>
+          <div className="flex justify-center pt-5 gap-2">
+            {exercise.attributes.bodyparts.data.map((bodypart) => (
+              <Pill
+                key={bodypart.id}
+                name={bodypart.attributes.bodypart}
+                route={bodypart.id}
+              />
+            ))}
+          </div>
+          <div className="flex justify-center pt-5">
+            <BigButton
+              handleGo={bigButtonOnClick}
+              text={buttonText}
+              icon={buttonIcon}
+            />
+          </div>
+        </div>
       </div>
     </div>
   )

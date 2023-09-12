@@ -26,10 +26,13 @@ function StretchesPage({ exerciseObjArr }: any) {
               (exerciseObj: ExerciseObjProps, index: number) => (
                 <div className="justify-start py-2" key={index}>
                   <h2 className="text-3xl p-4 text-left font-semibold text-white">
-                    {exerciseObj.name}
+                    {exerciseObj.name}&nbsp;
+                    <span className="text-gray-300 text-xl">
+                      ({exerciseObj.bodypartExercises.length})
+                    </span>
                   </h2>
                   <div className="flex justify-start items-center relative overflow-y-visible overflow-x-scroll scrollbar-hide py-6">
-                    <div className="flex flex-row gap-5 px-4 scrollbar-hide overscroll-contain">
+                    <div className="flex flex-row gap-5 px-4 scrollbar-hide overscroll-contain md:flex-wrap">
                       {exerciseObj.bodypartExercises.map(
                         (exercise: Exercise) => (
                           <Card exercise={exercise} key={exercise.id} />

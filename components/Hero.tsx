@@ -10,15 +10,15 @@ function Hero() {
     <>
       <section className="flex justify-center items-center text-center min-h-screen bg-gradient-to-r from-purplebg to-blackbg -mt-7 ">
         <div className="m-auto">
-          <h1 className="font-bold font-title leading-tight text-6xl text-purple-200 px-2">
+          <h1 className="font-bold font-title leading-tight text-6xl text-purple-200 px-2 md:text-7xl">
             <span className="text-gray-50">Stretch </span>
             at your
             <span className="text-gray-50"> Desk</span>
           </h1>
-          <h2 className="font-medium font-title leading-tight text-4xl mt-5 text-purple-400">
+          <h2 className="font-medium font-title leading-tight text-3xl md:text-6xl md:py-4 mt-5 text-purple-400">
             Reduce Stress
           </h2>
-          <p className="mt-5 text-purple-100">
+          <p className="mt-5 text-purple-100 md:text-xl">
             Choose some body parts and get a random stretch whenever you need it
           </p>
           <div className="inline-block mt-10">

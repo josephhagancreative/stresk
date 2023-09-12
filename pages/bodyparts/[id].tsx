@@ -14,9 +14,9 @@ function Bodypart({ exercises, name }: any) {
     router.back()
   }
   return (
-    <>
-      <section className="flex flex-col justify-start pt-20 min-h-screen bg-gradient-to-r from-purplebg to-blackbg">
-        <div className="mb-5 px-4">
+    <div className="min-h-screen bg-gradient-to-r from-purplebg to-blackbg">
+      <section className="flex flex-col justify-start pt-20   mx-auto md:max-w-5xl">
+        <div className="mb-5 px-4 ">
           {name && (
             <p className="text-3xl font-semibold text-white">
               Stretches for {name}
@@ -24,8 +24,8 @@ function Bodypart({ exercises, name }: any) {
           )}
         </div>
 
-        <div className="flex justify-start items-center text-center px-4 relative overflow-y-visible overflow-x-scroll scrollbar-hide py-6">
-          <div className=" flex flex-row gap-5 scrollbar-hide overscroll-contain">
+        <div className="flex justify-start items-center text-center px-4 relative overflow-y-visible overflow-x-scroll scrollbar-hide py-6 ">
+          <div className=" flex flex-row gap-5 scrollbar-hide overscroll-contain md:flex-wrap">
             {exercises &&
               exercises.map((exercise: Exercise) => (
                 <Card key={exercise.id} exercise={exercise} />
@@ -33,11 +33,11 @@ function Bodypart({ exercises, name }: any) {
           </div>
         </div>
 
-        <div className="px-4 pt-5">
+        <div className="px-4 py-5">
           <OutlineButton icon={icon} text="Back" onClick={handleClick} />
         </div>
       </section>
-    </>
+    </div>
   )
 }
 

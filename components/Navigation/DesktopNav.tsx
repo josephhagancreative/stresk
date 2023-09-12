@@ -5,7 +5,7 @@ import NavLinks from "./NavLinks"
 
 function DesktopNav() {
   return (
-    <div className="flex flex-row w-full justify-between py-1 md:py-5 ">
+    <div className="flex flex-row w-full justify-between   ">
       <div>
         <Link href="/">
           <Image

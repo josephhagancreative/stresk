@@ -9,7 +9,7 @@ function NewNav() {
 
   return (
     <div className="w-full bg-gradient-to-r from-purplebg to-blackbg fixed top-0 z-50">
-      <div className=" flex justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 relative py-3">
+      <div className=" flex justify-between px-8 mx-auto md:max-w-5xl md:items-center md:flex md:px-4 relative py-3">
         {!showNav && <DesktopNav />}
         <AnimatePresence>
           {showNav && (

@@ -101,7 +101,7 @@ function ContentBox({ bodyparts, exercises }: ContentBoxProps) {
   return (
     <div className="flex justify-center pb-14 bg-purple-100">
       <div
-        className=" bg-neutral-100 w-11/12 rounded-lg -mt-20 p-5 scroll-mt-20"
+        className=" bg-neutral-100 w-11/12 rounded-lg -mt-20 p-5 scroll-mt-20 md:max-w-5xl"
         id="randomBox">
         {toggleScreen === "select" && (
           <SelectionBox
