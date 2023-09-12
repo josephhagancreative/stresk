@@ -42,7 +42,7 @@ function DisplayStretch({
         </motion.button>
       </div>
       <div className="mt-5 relative w-full md:flex md:w-full gap-2">
-        <div className="flex flex-1 w-2/3 overflow-hidden rounded-md">
+        <div className="flex flex-1 md:w-2/3 overflow-hidden rounded-md">
           <CldVideoPlayer
             width="720"
             height="480"
@@ -57,7 +57,7 @@ function DisplayStretch({
             muted={true}
           />
         </div>
-        <div className="flex w-1/3 flex-col gap-2 md:ml-4">
+        <div className="flex md:w-1/3 flex-col gap-2 md:ml-4">
           <div className="flex mt-1 justify-center">
             <Countdown />
           </div>
