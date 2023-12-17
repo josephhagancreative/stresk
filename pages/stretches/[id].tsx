@@ -54,7 +54,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       exercise,
     },
-    revalidate: 60,
   }
 }
 

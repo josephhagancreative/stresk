@@ -19,7 +19,7 @@ function Card({ exercise }: ExerciseProps) {
           <Image
             className="object-cover w-full h-48"
             src={imgUrl}
-            width={500}
+            width={300}
             height={300}
             alt={name}
             layout="responsive"

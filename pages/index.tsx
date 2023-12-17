@@ -39,7 +39,6 @@ export const getStaticProps: GetStaticProps = async () => {
       exercises,
       bodyparts,
     },
-    revalidate: 60,
   }
 }
 

@@ -44,8 +44,8 @@ function DisplayStretch({
       <div className="mt-5 relative w-full md:flex md:w-full gap-2">
         <div className="flex flex-1 md:w-2/3 overflow-hidden rounded-md">
           <CldVideoPlayer
-            width="720"
-            height="480"
+            width="500"
+            height="500"
             src={videoUrl}
             colors={{
               accent: "#f2dbf8",
@@ -66,7 +66,7 @@ function DisplayStretch({
             <h3 className="font-bold mb-2">Instructions:</h3>
             <ReactMarkdown>{exercise.attributes.details}</ReactMarkdown>
           </div>
-          <div className="flex justify-center pt-5 gap-2">
+          <div className="flex justify-center flex-wrap pt-5 gap-2">
             {exercise.attributes.bodyparts.data.map((bodypart) => (
               <Pill
                 key={bodypart.id}

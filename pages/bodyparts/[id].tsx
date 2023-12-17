@@ -94,7 +94,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       exercises: array,
       name: bodypart.data.attributes.bodypart,
     },
-    revalidate: 60,
   }
 }
 
